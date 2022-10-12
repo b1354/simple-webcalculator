@@ -20,7 +20,6 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  margin: 0 auto;
   text-align: right;
 }
 
@@ -28,6 +27,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 30px;
+  margin:  30px auto;
 }
 
 .flex-container-row {
@@ -57,8 +57,52 @@ body {
   flex-basis: 50%;
 }
 
-@media screen and (max-width: 400px) {
+.history {
+  width:  80%;
+  overflow-y: scroll;
+  max-height: 200px;
+  margin: 30px auto;
+}
+
+.history table {
+  border-collapse:  collapse;
+  border-spacing: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.history button {
+  background-color: orange;
+  color: white;
+  padding: 5px;
+  margin: 20px 0;
+  border: none;
+  cursor: pointer;
+}
+
+table th {
+  background-color:  orange;
+  color:  white;
+  padding:  5px;
+}
+
+th,
+td {
+  border:  1px solid white;
+  padding: 5px;
+}
+
+tr:nth-child(even) {
+  background-color: #d2d2d2;
+}
+
+@media screen and (max-width: 550px) {
   .button{
-    padding: 10px;
+    padding: 15px;
+  }
+
+  .history {
+    width:  100%;
+    margin: 10px 0;
   }
 }

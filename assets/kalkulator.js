@@ -67,9 +67,25 @@ function performCalculation() {
     result = parseInt(calculator.firtsNumber) - parseInt(calculator.displayNumber);
   }
 
+  // menambahkan hasil hitung ke history dengan web storage
+  const history = {
+    firtsNumber: calculator.firtsNumber,
+    secondNumber: calculator.displayNumber,
+    operator: calculator.operator,
+    result: result,
+  }
+
+  putHistory(history);
+
   calculator.displayNumber = result;
   calculator.complete = true;
   updateDisplay();
+  renderHistory();
+}
+
+function resetHistory() {
+  localStorage.removeItem(CACHE_KEY)
+  renderHistory()
 }
 
 const buttons = document.querySelectorAll(".button")
